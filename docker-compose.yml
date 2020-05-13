@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  nginx:
+    build: ./nginx
+    volumes:
+      - static-assets:/usr/src/app/static_root
+      - static-media-assets:/usr/src/app/media
+      - ./certs:/etc/nginx/certs
+    ports:
+      - "0.0.0.0:80:80"
+      - "0.0.0.0:443:443"
